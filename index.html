@@ -205,14 +205,15 @@ section + section > .container::before { content: ''; display: block; border-top
   box-shadow: 0 2px 16px rgba(0,0,0,0.03);
 }
 .program-num {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Zen Old Mincho', serif;
   font-size: 0.7rem;
   letter-spacing: 0.3em;
-  color: var(--accent);
+  color: #fff;
   margin-bottom: 1rem;
   display: inline-block;
   padding: 0.2rem 0.8rem;
-  border: 1px solid var(--blend-light);
+  background: var(--sage);
+  border: 1px solid var(--sage);
   border-radius: 20px;
 }
 .program-name {
@@ -325,22 +326,22 @@ section + section > .container::before { content: ''; display: block; border-top
 /* Before / After */
 .ba-block {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.8rem;
+  grid-template-columns: 1fr;
+  gap: 0;
   margin-bottom: 0;
   position: relative;
 }
 .ba-arrow {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
   z-index: 1;
   line-height: 0;
+  padding: 0.3rem 0;
 }
 .ba-arrow svg {
-  width: 70px;
-  height: 120px;
+  width: 50px;
+  height: 50px;
+  transform: rotate(90deg);
 }
 .ba-card {
   background: rgba(255,255,255,0.6);
@@ -374,8 +375,12 @@ section + section > .container::before { content: ''; display: block; border-top
   border: 1px solid var(--light-gray);
 }
 .ba-label--after {
-  color: var(--accent-deep);
-  border: 1px solid var(--accent);
+  color: #d4845a;
+  border: 1px solid #e8a87c;
+}
+.ba-card:last-child b,
+.ba-card:last-child strong {
+  background: linear-gradient(transparent 70%, rgba(232,168,124,0.3) 70%);
 }
 .ba-list {
   list-style: none;
@@ -585,6 +590,7 @@ footer {
 }
 .recommend-screenshot img {
   width: 100%;
+  margin-bottom: 1.2rem;
   border-radius: 16px;
   box-shadow: 0 8px 32px rgba(0,0,0,0.06), 0 0 20px rgba(183,225,237,0.3);
   mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
@@ -629,23 +635,18 @@ footer {
   <img src="assets/hero.jpg" alt="My Life Story — 正解も不正解もない、あなたがワクワクする人生を">
 </div>
 
-<section class="intro">
-  <div class="intro-content">
-    <span class="intro-label">My Life Story Special Event</span>
-    <p class="intro-sub">理想の人生を描き、見つけ、体感する。<br>自分の人生がより愛おしくなる<br>きっかけを、あなたに。</p>
-  </div>
-</section>
-
 <section class="message">
   <div class="container">
-    <div class="message-text reveal">
-      <p>選択肢も、情報も、<br>ロールモデルもあふれる今。</p>
-      <p>誰かと比較して<br>自分の道に自信をもてなくなったり、<br>何者かになろうとして焦ったり、<br>どこに向かってるか<br>わからなくなったり。</p>
-      <p>そんな気持ちになることは<br>ありませんか？</p>
-      <p>あなたが不安な気持ちになるのは、<br>あなただけの<br><span class="emphasis">「My Life Story」</span>を<br>描けていないからかもしれません。</p>
-      <p class="highlight">あなたの人生は、<br>遠慮や比較や<br>誰かの期待の先にはない。</p>
-      <p class="highlight">だってあなたの人生は、<br>あなたが主役だから。</p>
-      <p>正解も不正解もない、<br>あなたがワクワクする人生を<br>一緒に描き、見つけ、体感していく。<br>そして、自分の人生がより愛おしくなる<br>きっかけをあなたにお届けします。</p>
+    <div class="section-header reveal">
+      <p class="section-label">Message</p>
+    </div>
+    <div class="message-text">
+      <p class="reveal">選択肢も、情報も、<br>ロールモデルもあふれる時代。</p>
+      <p class="reveal">誰かと比較して<br>自分の道に自信をもてなくなったり、<br>何者かになろうとして焦ったり、<br>どこに向かってるかわからなくなったり。<br>そんな気持ちになることはありませんか？</p>
+      <p class="reveal">あなたが不安になるのは、<br>あなただけの<br><span class="emphasis">「My life story」</span>を<br>描けていないからかもしれません。</p>
+      <p class="highlight reveal">あなたの人生は、<br>遠慮や比較や誰かの期待の先にはない。<br>だって、あなたの人生は、<br>あなたが主役だから。</p>
+      <p class="reveal">正解も不正解もない、<br>あなたがワクワクする人生を<br>一緒に描き、見つけ、体感していく。</p>
+      <p class="reveal">そして、自分の人生がより愛おしくなる<br>きっかけをあなたにお届けします。</p>
     </div>
   </div>
 </section>
@@ -657,16 +658,16 @@ footer {
       <h2 class="section-title">こんなあなたにおすすめ</h2>
       <span class="section-line"></span>
     </div>
-    <ul class="recommend-list reveal">
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="#5a9faa" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 16 9"/></svg>何者かになろうとして焦ってしまう</li>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="#5a9faa" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 16 9"/></svg>自分の可能性をもっと広げていきたい</li>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="#5a9faa" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 16 9"/></svg>誰かと比較して自分の道に自信がなくなる</li>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="#5a9faa" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 16 9"/></svg>本当は挑戦したいけど、チャレンジすることが怖い</li>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="#5a9faa" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 16 9"/></svg>このままでいいんだっけ？と立ち止まってしまうことがある</li>
-    </ul>
     <div class="recommend-screenshot reveal">
       <img src="assets/recommend-screenshot.jpg" alt="参加者の声">
     </div>
+    <ul class="recommend-list reveal">
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="#5a9faa" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 16 9"/></svg>誰かの活躍が羨ましく感じてしまう…</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="#5a9faa" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 16 9"/></svg>進んでいる道が合っているか不安に思ってしまう💭</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="#5a9faa" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 16 9"/></svg>自分の可能性をもっと広げていきたい🪽</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="#5a9faa" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 16 9"/></svg>今も幸せだけど、もっと自分の人生にワクワクしたい✨</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="#5a9faa" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 16 9"/></svg>２０２６年は、今よりさらに飛躍したい🔥</li>
+    </ul>
   </div>
 </section>
 
@@ -680,7 +681,7 @@ footer {
     <div class="program-item reveal">
       <p class="program-num">PROGRAM 01</p>
       <h3 class="program-name"><span>じぬ × まどかの<br>赤裸々トークセッション</span></h3>
-      <p class="program-desc">独立して「自分の名前で生きる」と決めた私たち二人のトークセッション。これまで伝えたことのない過程もお話しします。</p>
+      <p class="program-desc">独立して「自分の名前で生きる」と決めた私たち二人のトークセッション。ここでしか話せない私たちの歩みやリアルな葛藤を赤裸々にお伝えします。</p>
       <div class="program-photos">
         <img src="assets/talk-session-01.jpg" alt="トークセッション">
         <img src="assets/talk-session-02.jpg" alt="トークセッション">
@@ -697,8 +698,8 @@ footer {
     </div>
     <div class="program-item reveal">
       <p class="program-num">PROGRAM 03</p>
-      <h3 class="program-name"><span>理想の人生を体感する</span></h3>
-      <p class="program-desc">理想の人生を描くだけで終わらせず、シェアや宣言、そして仲間からの声をもって体感していただきます。</p>
+      <h3 class="program-name"><span>「This is me！」宣言</span></h3>
+      <p class="program-desc">理想の人生を描くだけで終わらせず、イベントのクライマックスでは、あなたの想いを仲間の前で声にする「This is me！」宣言を実施します。仲間からのあたたかい声援を受けて、ワクワクするあなただけの未来を体感してください。</p>
       <div class="program-photos program-photos--three">
         <img src="assets/experience-01.jpg" alt="体感する">
         <img src="assets/experience-02.jpg" alt="体感する">
@@ -709,22 +710,22 @@ footer {
       <div class="ba-card">
         <p class="ba-label ba-label--before"><svg viewBox="0 0 24 24" fill="none" stroke="#94A5A8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 17.58A5 5 0 0018 8h-1.26A8 8 0 104 16.25"/><path d="M8 19h.01"/><path d="M8 22h.01"/><path d="M12 17h.01"/><path d="M12 20h.01"/><path d="M16 19h.01"/><path d="M16 22h.01"/></svg>Before</p>
         <ul class="ba-list">
-          <li><svg class="ba-icon" viewBox="0 0 24 24" fill="none" stroke="#94A5A8" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="8" y1="12" x2="16" y2="12"/></svg>漠然とした不安がある</li>
-          <li><svg class="ba-icon" viewBox="0 0 24 24" fill="none" stroke="#94A5A8" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="8" y1="12" x2="16" y2="12"/></svg>誰かと比較してしまう</li>
-          <li><svg class="ba-icon" viewBox="0 0 24 24" fill="none" stroke="#94A5A8" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="8" y1="12" x2="16" y2="12"/></svg>やりたいことがわからない</li>
-          <li><svg class="ba-icon" viewBox="0 0 24 24" fill="none" stroke="#94A5A8" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="8" y1="12" x2="16" y2="12"/></svg>一歩を踏み出せない</li>
+          <li><svg class="ba-icon" viewBox="0 0 24 24" fill="none" stroke="#94A5A8" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="8" y1="12" x2="16" y2="12"/></svg>誰かの活躍が羨ましく感じてしまう</li>
+          <li><svg class="ba-icon" viewBox="0 0 24 24" fill="none" stroke="#94A5A8" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="8" y1="12" x2="16" y2="12"/></svg>どこに向かって走っているかわからなくなる</li>
+          <li><svg class="ba-icon" viewBox="0 0 24 24" fill="none" stroke="#94A5A8" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="8" y1="12" x2="16" y2="12"/></svg>今も幸せだけど、もっと自分の人生にワクワクしたい</li>
+          <li><svg class="ba-icon" viewBox="0 0 24 24" fill="none" stroke="#94A5A8" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="8" y1="12" x2="16" y2="12"/></svg>2026年は、今よりさらに飛躍したい</li>
         </ul>
       </div>
       <div class="ba-arrow">
-        <svg viewBox="0 0 24 24" fill="#d4c5a9" stroke="none" preserveAspectRatio="none"><path d="M8 5v14l11-7z"/></svg>
+        <svg viewBox="0 0 24 24" fill="#e8a87c" stroke="none"><path d="M8 5v14l11-7z"/></svg>
       </div>
       <div class="ba-card">
-        <p class="ba-label ba-label--after"><svg viewBox="0 0 24 24" fill="none" stroke="#5a9faa" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="M4.93 4.93l1.41 1.41"/><path d="M17.66 17.66l1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="M4.93 19.07l1.41-1.41"/><path d="M17.66 6.34l1.41-1.41"/></svg>After</p>
+        <p class="ba-label ba-label--after"><svg viewBox="0 0 24 24" fill="none" stroke="#d4845a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="M4.93 4.93l1.41 1.41"/><path d="M17.66 17.66l1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="M4.93 19.07l1.41-1.41"/><path d="M17.66 6.34l1.41-1.41"/></svg>After</p>
         <ul class="ba-list">
-          <li><svg class="ba-icon" viewBox="0 0 24 24" fill="none" stroke="#5a9faa" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 16 9"/></svg><span><b>自分だけの理想</b>が明確に</span></li>
-          <li><svg class="ba-icon" viewBox="0 0 24 24" fill="none" stroke="#5a9faa" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 16 9"/></svg><span><b>自分軸</b>で人生を描ける</span></li>
-          <li><svg class="ba-icon" viewBox="0 0 24 24" fill="none" stroke="#5a9faa" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 16 9"/></svg><span><b>ワクワクする</b>未来が見える</span></li>
-          <li><svg class="ba-icon" viewBox="0 0 24 24" fill="none" stroke="#5a9faa" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 16 9"/></svg><span><b>仲間と一歩</b>を踏み出せる</span></li>
+          <li><svg class="ba-icon" viewBox="0 0 24 24" fill="none" stroke="#d4845a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 16 9"/></svg><span><b>これが私の人生だ！</b>と胸を張って言える</span></li>
+          <li><svg class="ba-icon" viewBox="0 0 24 24" fill="none" stroke="#d4845a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 16 9"/></svg><span>自分の未来に<b>ワクワク</b>している</span></li>
+          <li><svg class="ba-icon" viewBox="0 0 24 24" fill="none" stroke="#d4845a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 16 9"/></svg><span><b>自分軸</b>で理想の人生を描けている</span></li>
+          <li><svg class="ba-icon" viewBox="0 0 24 24" fill="none" stroke="#d4845a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 16 9"/></svg><span><b>熱量高い仲間</b>と新しい一歩を踏み出せる</span></li>
         </ul>
       </div>
     </div>
@@ -755,15 +756,15 @@ footer {
     <div class="voice-list reveal">
       <div class="voice-item">
         <div class="voice-avatar"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
-        <p>ずっと憧れてた方と<br>お仕事ができた！</p>
+        <p>ずっと憧れてた方と<br>お仕事ができた！😭</p>
       </div>
       <div class="voice-item">
         <div class="voice-avatar"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
-        <p>思い切って発信してみたら<br>たくさんの方と繋がれた！</p>
+        <p>思い切って発信してみたら<br>たくさんの方と繋がれた！🤝</p>
       </div>
       <div class="voice-item">
         <div class="voice-avatar"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
-        <p>これからも切磋琢磨できる<br>仲間と繋がれた！</p>
+        <p>これからも切磋琢磨できる<br>仲間と繋がれた！🔥</p>
       </div>
     </div>
 
@@ -812,7 +813,7 @@ footer {
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#5a9faa" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
         <div>
           <p class="detail-label">会場</p>
-          <p class="detail-value"><a href="https://www.google.com/maps/search/?api=1&query=愛知県名古屋市中区栄3丁目19番19号" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">愛知県名古屋市中区栄<br>3丁目19番19号</a><small>名城線 矢場町駅 徒歩8分<br>東山線 栄駅 徒歩10分<br>東山線 伏見駅 徒歩12分</small></p>
+          <p class="detail-value">TSUNAGARU SPACE（ツナガルスペース）<br>愛知県名古屋市中区栄3丁目19番19号<br><a href="https://www.google.com/maps/search/?api=1&query=愛知県名古屋市中区栄3丁目19番19号" target="_blank" rel="noopener noreferrer" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;font-size:0.85rem;">（Google Mapはこちら）</a><small>名城線 矢場町駅 徒歩8分<br>東山線 栄駅 徒歩10分<br>東山線 伏見駅 徒歩12分</small></p>
         </div>
       </div>
     </div>
